@@ -4,10 +4,13 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
 
+#método para lê o arquivo csv
 base = pd.read_csv('spam.csv')
 
+#para mostra os dados
 print(base)
 
+#transforma tudo em valores
 X = base.iloc[:, [1]].values
 Y = base.iloc[:, 0].values
 
@@ -21,4 +24,5 @@ naive_bayes.fit(X_train, Y_train)
 
 prediction = naive_bayes.predict(X_test)
 
+#Acurácia dos dados
 print(accuracy_score(Y_test, prediction))
