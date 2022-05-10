@@ -16,6 +16,7 @@ Y = base.iloc[:, 0].values
 
 labelencoder = LabelEncoder()
 X[:, 0] = labelencoder.fit_transform(X[:, 0])
+X[:, 1] = labelencoder.fit_transform(X[:, 1])
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=0)
 
